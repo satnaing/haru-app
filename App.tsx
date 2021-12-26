@@ -5,6 +5,7 @@ import theme from "./src/config/theme";
 import Header from "./src/components/Header";
 import Test from "./src/screens/Test";
 import SearchInput from "./src/components/SearchInput";
+import CategoryRow from "./src/components/CategoryRow";
 
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
         {/* <Test /> */}
         <Header />
         <SearchInput />
+        <CategoryRow />
       </AppContainer>
     </NativeBaseProvider>
   );
