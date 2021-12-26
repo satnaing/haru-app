@@ -11,8 +11,12 @@ export default function Header() {
       alignItems="center"
     >
       <Heading size="2xl">Haru Fashion</Heading>
-      <Pressable p={4}>
-        <Icon as={<Feather name="bell" />} size="7" />
+      <Pressable
+        borderRadius={100}
+        p={4}
+        _pressed={{ background: "light.200" }}
+      >
+        <Icon as={<Feather name="bell" />} size="6" />
       </Pressable>
     </Flex>
   );
