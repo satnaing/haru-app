@@ -32,8 +32,8 @@ const CategoryMenu: React.FC<MenuProps> = ({ name, icon, index }) => {
     <Button
       size="md"
       m={2}
-      ml={index === 0 ? "1" : "3"}
-      shadow={3}
+      ml={index === 0 ? "4" : "3"}
+      shadow={2}
       background="light.100"
       _pressed={{
         background: "light.200",

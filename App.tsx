@@ -14,8 +14,10 @@ export default function App() {
         {/* <Test /> */}
         <Header />
         <SearchInput />
-        <CategoryRow />
       </AppContainer>
+      <Box>
+        <CategoryRow />
+      </Box>
     </NativeBaseProvider>
   );
 }
