@@ -14,10 +14,10 @@ const SearchInput: React.FC<Props> = () => {
           base: "82%",
           // md: "25%",
         }}
-        _focus={{ borderColor: "light.500" }}
+        _focus={{ borderColor: "light.300" }}
         borderRadius={0}
         py={2}
-        size="2xl"
+        size="xl"
         InputLeftElement={
           <Icon
             as={<Feather name="search" />}
