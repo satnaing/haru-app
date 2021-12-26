@@ -1,12 +1,19 @@
-import { NativeBaseProvider } from "native-base";
+import { Box, NativeBaseProvider } from "native-base";
+import AppContainer from "./src/components/AppContainer";
 
 import theme from "./src/config/theme";
+import Header from "./src/components/Header";
 import Test from "./src/screens/Test";
+import SearchInput from "./src/components/SearchInput";
 
 export default function App() {
   return (
     <NativeBaseProvider theme={theme}>
-      <Test />
+      <AppContainer>
+        {/* <Test /> */}
+        <Header />
+        <SearchInput />
+      </AppContainer>
     </NativeBaseProvider>
   );
 }

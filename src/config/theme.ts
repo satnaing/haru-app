@@ -1,4 +1,4 @@
-import { NativeBaseProvider, extendTheme } from "native-base";
+import { extendTheme } from "native-base";
 
 const theme = extendTheme({
   colors: {
@@ -22,26 +22,6 @@ const theme = extendTheme({
         rounded: "0",
       },
     },
-  },
-  fontConfig: {
-    Jost: {
-      400: {
-        normal: "Jost-Regular",
-      },
-      500: {
-        normal: "Jost-Medium",
-      },
-      700: {
-        normal: "Jost-Bold",
-      },
-    },
-  },
-
-  // Make sure values below matches any of the keys in `fontConfig`
-  fonts: {
-    heading: "Jost",
-    body: "Jost",
-    mono: "Jost",
   },
 });
 
