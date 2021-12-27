@@ -7,7 +7,8 @@ export const items = [
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora magnam debitis dolor veniam consequatur numquam perferendis cum, ipsam aliquid ipsa?",
     image1:
       "https://firebasestorage.googleapis.com/v0/b/ecommerce-sn.appspot.com/o/items%2FLong%20SleeveCheckedShirt-img2.jpg?alt=media&token=3a9c3759-d7c5-484f-a6b0-288b205c06f5",
-    image2: "image2",
+    image2:
+      "https://firebasestorage.googleapis.com/v0/b/ecommerce-sn.appspot.com/o/items%2FLong%20SleeveCheckedShirt-img1.jpg?alt=media&token=4112c526-f7c6-4145-b382-a8fe5b26671c",
     categoryId: "1",
   },
   {
@@ -18,7 +19,8 @@ export const items = [
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora magnam debitis dolor veniam consequatur numquam perferendis cum, ipsam aliquid ipsa?",
     image1:
       "https://firebasestorage.googleapis.com/v0/b/ecommerce-sn.appspot.com/o/items%2FZippedJoggers-img2.jpg?alt=media&token=316b1d0a-7975-4f74-bc9f-c3020536e166",
-    image2: "image2",
+    image2:
+      "https://firebasestorage.googleapis.com/v0/b/ecommerce-sn.appspot.com/o/items%2FZippedJoggers-img1.jpg?alt=media&token=c443c9f5-a740-4ae6-b4f1-9e1036504631",
     categoryId: "1",
   },
   {
@@ -29,7 +31,8 @@ export const items = [
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora magnam debitis dolor veniam consequatur numquam perferendis cum, ipsam aliquid ipsa?",
     image1:
       "https://firebasestorage.googleapis.com/v0/b/ecommerce-sn.appspot.com/o/items%2FPleatedShirtDress-img1.jpg?alt=media&token=fbbebda0-ea6c-493d-b4f8-7bfea245758e",
-    image2: "image2",
+    image2:
+      "https://firebasestorage.googleapis.com/v0/b/ecommerce-sn.appspot.com/o/items%2FPleatedShirtDress-img2.jpg.webp?alt=media&token=e672bd8a-723c-4fa2-98f7-414b0ab5404a",
     categoryId: "2",
   },
   {
@@ -40,7 +43,8 @@ export const items = [
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora magnam debitis dolor veniam consequatur numquam perferendis cum, ipsam aliquid ipsa?",
     image1:
       "https://firebasestorage.googleapis.com/v0/b/ecommerce-sn.appspot.com/o/items%2FPleatedMidiSkirt-img1.jpg?alt=media&token=a3ad8032-f706-4ad3-87db-0a6d971aafed",
-    image2: "image2",
+    image2:
+      "https://firebasestorage.googleapis.com/v0/b/ecommerce-sn.appspot.com/o/items%2FPleatedMidiSkirt-img2.jpg?alt=media&token=77a631ae-e35d-4c25-aace-1b8c9c65d6dd",
     categoryId: "2",
   },
   {
@@ -51,14 +55,15 @@ export const items = [
       "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora magnam debitis dolor veniam consequatur numquam perferendis cum, ipsam aliquid ipsa?",
     image1:
       "https://firebasestorage.googleapis.com/v0/b/ecommerce-sn.appspot.com/o/items%2FFloralMidiSkirt-img2.jpg?alt=media&token=986733fa-724c-4236-85cf-bd6154366f7c",
-    image2: "image2",
+    image2:
+      "https://firebasestorage.googleapis.com/v0/b/ecommerce-sn.appspot.com/o/items%2FFloralMidiSkirt-img1.jpg?alt=media&token=d82e7c88-95a1-419b-b562-dc6efbcbc787",
     categoryId: "2",
   },
 ];
 
 export const newItems = [
   {
-    id: "1",
+    id: "10",
     name: "Short Straight Coat",
     price: "89.92",
     description:
@@ -70,7 +75,7 @@ export const newItems = [
     categoryId: "1",
   },
   {
-    id: "2",
+    id: "6",
     name: "Pleated Shirt Dress",
     price: "99.99",
     description:
@@ -82,7 +87,7 @@ export const newItems = [
     categoryId: "1",
   },
   {
-    id: "3",
+    id: "7",
     name: "Joggers With Mesh Detail",
     price: "65.88",
     description:
@@ -94,7 +99,7 @@ export const newItems = [
     categoryId: "2",
   },
   {
-    id: "4",
+    id: "8",
     name: "Gray Flare Jeans",
     price: "48.39",
     description:
@@ -106,7 +111,7 @@ export const newItems = [
     categoryId: "2",
   },
   {
-    id: "5",
+    id: "9",
     name: "Quilted Bomber Jacket",
     price: "89.99",
     description:
