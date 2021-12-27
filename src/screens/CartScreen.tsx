@@ -1,10 +1,13 @@
 import React from "react";
 import { Box, Button } from "native-base";
 import { StyleSheet } from "react-native";
-import { useNavigation } from "@react-navigation/native";
+import { useRoute } from "@react-navigation/native";
 
-export default function Test() {
-  const navigation = useNavigation();
+type Param = {
+  id?: string | undefined;
+};
+
+export default function CartScreen() {
   return (
     <Box style={styles.container} safeArea>
       Haru Fashion
@@ -12,9 +15,8 @@ export default function Test() {
         _pressed={{ background: "light.400" }}
         background="light.500"
         _text={{ color: "light.100" }}
-        onPress={() => navigation.goBack()}
       >
-        HoeHoe
+        CartScreen
       </Button>
       {/* <Button colorScheme="dark">Hello World</Button> */}
     </Box>
