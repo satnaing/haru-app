@@ -58,6 +58,7 @@ const ItemRow: React.FC<Props> = ({ title, items }) => {
         {items.map((item) => (
           <ItemCard
             key={item.id}
+            id={item.id}
             name={item.name}
             price={item.price}
             image={item.image1}

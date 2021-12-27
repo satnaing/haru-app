@@ -8,41 +8,32 @@ import {
   Stack,
   Pressable,
 } from "native-base";
-import { TouchableOpacity } from "react-native";
+import { CommonActions, useNavigation } from "@react-navigation/native";
 
 type Props = {
+  id: string;
   name: string;
   price: string;
   image: string;
 };
 
-const ItemCard: React.FC<Props> = ({ name, price, image }) => {
+const ItemCard: React.FC<Props> = ({ id, name, price, image }) => {
+  const navigation = useNavigation();
   const img = { uri: image };
   return (
     <Pressable
       mx={4}
       _pressed={{ opacity: "0.7" }}
-      onPress={() => console.log(name)}
+      onPress={() =>
+        navigation.dispatch(
+          CommonActions.navigate({
+            name: "Item",
+            params: { id },
+          })
+        )
+      }
     >
-      {/* <TouchableOpacity onPress={() => console.log("HAHA")}> */}
-      <Box
-        width="200px"
-        rounded="none"
-        overflow="hidden"
-        // borderColor="coolGray.200"
-        // borderWidth="1"
-        _dark={
-          {
-            // borderColor: "coolGray.600",
-            // backgroundColor: "gray.700",
-          }
-        }
-        _light={
-          {
-            // backgroundColor: "gray.50",
-          }
-        }
-      >
+      <Box width="200px" rounded="none" overflow="hidden">
         <Box>
           <AspectRatio w="100%" ratio={0.74 / 1}>
             <Image source={img} alt="image" />
@@ -55,7 +46,6 @@ const ItemCard: React.FC<Props> = ({ name, price, image }) => {
           <Text fontSize="md">$ {price}</Text>
         </Stack>
       </Box>
-      {/* </TouchableOpacity> */}
     </Pressable>
   );
 };
