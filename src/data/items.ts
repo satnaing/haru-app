@@ -122,4 +122,28 @@ export const newItems = [
       "https://firebasestorage.googleapis.com/v0/b/ecommerce-sn.appspot.com/o/items%2FQuiltedBomberJacket-img2.jpg?alt=media&token=0a3d2b11-e47e-4eeb-a4e0-8641e19f9007",
     categoryId: "2",
   },
+  {
+    id: "11",
+    name: "Pleated Midi Skirt",
+    price: "59.39",
+    description:
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora magnam debitis dolor veniam consequatur numquam perferendis cum, ipsam aliquid ipsa?",
+    image1:
+      "https://firebasestorage.googleapis.com/v0/b/ecommerce-sn.appspot.com/o/items%2FPleatedMidiSkirt-img1.jpg?alt=media&token=a3ad8032-f706-4ad3-87db-0a6d971aafed",
+    image2:
+      "https://firebasestorage.googleapis.com/v0/b/ecommerce-sn.appspot.com/o/items%2FPleatedMidiSkirt-img2.jpg?alt=media&token=77a631ae-e35d-4c25-aace-1b8c9c65d6dd",
+    categoryId: "2",
+  },
+  {
+    id: "12",
+    name: "Long Sleeve Checked Shirt",
+    price: "60",
+    description:
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora magnam debitis dolor veniam consequatur numquam perferendis cum, ipsam aliquid ipsa?",
+    image1:
+      "https://firebasestorage.googleapis.com/v0/b/ecommerce-sn.appspot.com/o/items%2FLong%20SleeveCheckedShirt-img2.jpg?alt=media&token=3a9c3759-d7c5-484f-a6b0-288b205c06f5",
+    image2:
+      "https://firebasestorage.googleapis.com/v0/b/ecommerce-sn.appspot.com/o/items%2FLong%20SleeveCheckedShirt-img1.jpg?alt=media&token=4112c526-f7c6-4145-b382-a8fe5b26671c",
+    categoryId: "1",
+  },
 ];
