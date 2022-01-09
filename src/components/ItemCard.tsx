@@ -15,14 +15,21 @@ type Props = {
   name: string;
   price: string;
   image: string;
+  twoColumn?: boolean;
 };
 
-const ItemCard: React.FC<Props> = ({ id, name, price, image }) => {
+const ItemCard: React.FC<Props> = ({
+  id,
+  name,
+  price,
+  image,
+  twoColumn = false,
+}) => {
   const navigation = useNavigation();
   const img = { uri: image };
   return (
     <Pressable
-      mx={4}
+      mx={twoColumn ? 2 : 4}
       _pressed={{ opacity: "0.7" }}
       onPress={() =>
         navigation.dispatch(
@@ -33,7 +40,7 @@ const ItemCard: React.FC<Props> = ({ id, name, price, image }) => {
         )
       }
     >
-      <Box width="200px" rounded="none" overflow="hidden">
+      <Box width="175px" rounded="none" overflow="hidden">
         <Box>
           <AspectRatio w="100%" ratio={0.74 / 1}>
             <Image source={img} alt="image" />
