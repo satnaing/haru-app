@@ -97,15 +97,15 @@ const BottomTabNavigator = () => {
       <BottomTab.Screen
         name="Categories"
         component={CategoriesScreen}
-        options={({ navigation }) => ({
+        options={{
           header: () =>
             AppHeader({
               title: "Categories",
               navScreen: "Cart",
               iconName: "sliders",
-              navigation,
+              // iconName: "shopping-bag",
             }),
-        })}
+        }}
       />
       <BottomTab.Screen name="Wishlist" component={Test} />
       <BottomTab.Screen name="Test" component={Test} />
