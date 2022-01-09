@@ -15,11 +15,9 @@ import { TouchableOpacity } from "react-native";
 const RegisterScreen = () => {
   return (
     <Box flex={1} bg="light.200">
-      <Center bg="light.500" height="25%">
+      <Center bg="light.500" height="30%" pt={8}>
         <Image
-          style={{ width: "30%", height: "40%" }}
-          size="xl"
-          resizeMode="cover"
+          style={{ width: "30%", height: "30%" }}
           source={require("../assets/logo.png")}
           alt="Haru Fashion"
         />

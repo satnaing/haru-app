@@ -22,9 +22,9 @@ import { TouchableOpacity } from "react-native";
 const LoginScreen = () => {
   return (
     <Box flex={1} bg="light.200">
-      <Center bg="light.500" height="25%">
+      <Center bg="light.500" height="30%" pt={8}>
         <Image
-          style={{ width: "30%", height: "40%" }}
+          style={{ width: "30%", height: "30%" }}
           size="xl"
           resizeMode="cover"
           source={require("../assets/logo.png")}
