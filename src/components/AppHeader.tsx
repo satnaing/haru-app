@@ -1,27 +1,33 @@
 import React from "react";
 import { Box, Text, Flex, Icon, Pressable } from "native-base";
 import { Feather } from "@expo/vector-icons";
-import { CommonActions, useNavigation } from "@react-navigation/native";
+import { CommonActions } from "@react-navigation/native";
 
 type Props = {
   title?: string;
   navScreen?: string;
   iconName?: any;
+  navigation?: any;
 };
 
-const AppHeader: React.FC<Props> = ({ title, navScreen, iconName }) => {
-  const navigation = useNavigation();
+const AppHeader: React.FC<Props> = ({
+  title,
+  navScreen,
+  iconName,
+  navigation,
+}) => {
+  // const navigation = useNavigation();
   return (
     <Flex
       safeAreaTop
       pl={4}
       pr={2}
-      // style={{ height: 80 }}
       h="100px"
       _android={{ h: "80px" }}
       direction="row"
       justifyContent="space-between"
       alignItems="center"
+      backgroundColor="light.100"
     >
       <Pressable onPress={() => navigation.goBack()}>
         <Icon as={<Feather name="arrow-left" />} size="7" />
