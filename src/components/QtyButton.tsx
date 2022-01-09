@@ -1,22 +1,30 @@
 import React from "react";
 import { Box, Button, Center, Spacer } from "native-base";
 
-const QtyButton = () => {
+type Props = {
+  size?: "sm" | "md";
+};
+
+const QtyButton: React.FC<Props> = ({ size = "md" }) => {
+  const btnSize = size == "md" ? 12 : 8;
   return (
-    <Box flexDirection="row" background="lightBlue.100">
-      <SizeButton type="add">-</SizeButton>
-      {/* <SizeButton>H</SizeButton> */}
+    <Box flexDirection="row">
+      <SizeButton type="add" size={btnSize}>
+        -
+      </SizeButton>
       <Center
         background="light.100"
         borderWidth="1"
         borderColor="light.300"
-        width="12"
-        height="12"
+        width={btnSize}
+        height={btnSize}
         _text={{ color: "light.300" }}
       >
         1
       </Center>
-      <SizeButton type="sub">+</SizeButton>
+      <SizeButton type="sub" size={btnSize}>
+        +
+      </SizeButton>
     </Box>
   );
 };
@@ -24,11 +32,13 @@ const QtyButton = () => {
 type SizeProps = {
   children: React.ReactNode;
   type: "add" | "sub";
+  size?: number;
 };
 
-const SizeButton: React.FC<SizeProps> = ({ children, type }) => {
+const SizeButton: React.FC<SizeProps> = ({ children, type, size = "md" }) => {
   const borderLeftWidth = type === "add" ? 1 : 0;
   const borderRightWidth = type === "add" ? 0 : 1;
+  const btnSize = size == "md" ? 12 : 8;
   return (
     <Button
       background="light.100"
@@ -36,8 +46,8 @@ const SizeButton: React.FC<SizeProps> = ({ children, type }) => {
         bg: "light.200",
       }}
       _text={{ color: "light.300" }}
-      width="12"
-      height="12"
+      width={btnSize}
+      height={btnSize}
       borderWidth="1"
       borderColor="light.300"
       style={{ borderLeftWidth, borderRightWidth }}
