@@ -9,15 +9,19 @@ import {
   Input,
   Text,
 } from "native-base";
-import { items, newItems } from "../data/items";
 import { TouchableOpacity } from "react-native";
+import { NavigationProp, ParamListBase } from "@react-navigation/native";
 
-const RegisterScreen = () => {
+const RegisterScreen = ({
+  navigation,
+}: {
+  navigation: NavigationProp<ParamListBase>;
+}) => {
   return (
-    <Box flex={1} bg="light.200">
+    <Box flex={1} bg="light.200" safeArea>
       <Center bg="light.500" height="30%" pt={8}>
         <Image
-          style={{ width: "30%", height: "30%" }}
+          style={{ width: "30%", height: "35%" }}
           source={require("../assets/logo.png")}
           alt="Haru Fashion"
         />
@@ -56,7 +60,7 @@ const RegisterScreen = () => {
         </Button>
         <HStack alignSelf="center">
           <Text color="light.300">Already a member? </Text>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate("Login")}>
             <Text>Login Now!</Text>
           </TouchableOpacity>
         </HStack>
