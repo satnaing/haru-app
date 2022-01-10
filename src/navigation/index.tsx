@@ -4,12 +4,15 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "../screens/HomeScreen";
 import NotFoundScreen from "../screens/NotFoundScreen";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Test from "../screens/Test";
 import { Feather } from "@expo/vector-icons";
 import ItemScreen from "../screens/ItemScreen";
 import CartScreen from "../screens/CartScreen";
 import AppHeader from "../components/AppHeader";
 import CategoriesScreen from "../screens/CategoriesScreen";
+import CategoryScreen from "../screens/CategoryScreen";
+import WishlistScreen from "../screens/WishlistScreen";
+import LoginScreen from "../screens/LoginScreen";
+import RegisterScreen from "../screens/RegisterScreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -94,7 +97,7 @@ const BottomTabNavigator = () => {
         options={{ headerShown: false }}
         component={HomeScreen}
       />
-      <BottomTab.Screen
+      {/* <BottomTab.Screen
         name="Categories"
         component={CategoriesScreen}
         options={({ navigation }) => ({
@@ -106,11 +109,92 @@ const BottomTabNavigator = () => {
               navigation,
             }),
         })}
+      /> */}
+      <BottomTab.Screen
+        name="Categories"
+        component={CategoryNavigator}
+        options={{ headerShown: false }}
       />
-      <BottomTab.Screen name="Wishlist" component={Test} />
-      <BottomTab.Screen name="Test" component={Test} />
-      <BottomTab.Screen name="Profile" component={Test} />
+      <BottomTab.Screen
+        name="Wishlist"
+        component={WishlistScreen}
+        options={({ navigation }) => ({
+          header: () =>
+            AppHeader({
+              title: "Wishlist",
+              navigation,
+            }),
+        })}
+      />
+      {/* <BottomTab.Screen
+        name="Cart"
+        component={CartScreen}
+        options={({ navigation }) => ({
+          header: () =>
+            AppHeader({
+              title: "Cart",
+              navigation,
+            }),
+        })}
+      /> */}
+      <BottomTab.Screen
+        name="Profile"
+        component={ProfileNavigator}
+        options={{ headerShown: false }}
+        // options={{
+        //   headerTransparent: true,
+        //   headerTintColor: "white",
+        // }}
+      />
     </BottomTab.Navigator>
+  );
+};
+
+const ProfileNavigator = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="Login"
+        component={LoginScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="Register"
+        component={RegisterScreen}
+        options={{ headerShown: false }}
+      />
+    </Stack.Navigator>
+  );
+};
+
+const CategoryNavigator = () => {
+  return (
+    <Stack.Navigator>
+      <Stack.Screen
+        name="All Categories"
+        component={CategoriesScreen}
+        options={({ navigation }) => ({
+          header: () =>
+            AppHeader({
+              title: "Categories",
+              navigation,
+            }),
+        })}
+      />
+      <Stack.Screen
+        name="Category"
+        component={CategoryScreen}
+        options={({ route, navigation }: { route: any; navigation: any }) => ({
+          header: () =>
+            AppHeader({
+              title: route?.params?.name,
+              navScreen: "Cart",
+              iconName: "shopping-bag",
+              navigation,
+            }),
+        })}
+      />
+    </Stack.Navigator>
   );
 };
 
