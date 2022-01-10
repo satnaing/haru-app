@@ -1,5 +1,6 @@
 import React from "react";
 import { Box, Image, Pressable, ScrollView, Text } from "native-base";
+import { NavigationProp, ParamListBase } from "@react-navigation/native";
 
 const categories = [
   {
@@ -20,11 +21,20 @@ const categories = [
   },
 ];
 
-const CategoriesScreen = () => {
+type ScreenProps = {
+  navigation: NavigationProp<ParamListBase>;
+};
+
+const CategoriesScreen: React.FC<ScreenProps> = ({ navigation }) => {
   return (
     <ScrollView flex="1" backgroundColor="light.100">
       {categories.map((category) => (
-        <Category key={category.name} name={category.name} uri={category.uri} />
+        <Category
+          key={category.name}
+          name={category.name}
+          uri={category.uri}
+          navigation={navigation}
+        />
       ))}
     </ScrollView>
   );
@@ -33,17 +43,20 @@ const CategoriesScreen = () => {
 type Props = {
   name: string;
   uri: string;
+  navigation: NavigationProp<ParamListBase>;
 };
 
-const Category: React.FC<Props> = ({ name, uri }) => {
+const Category: React.FC<Props> = ({ name, uri, navigation }) => {
   return (
     <Pressable
       backgroundColor="light.200"
       flexDirection="row"
       justifyContent="space-around"
       alignItems="center"
-      m="4"
+      mx="4"
+      my="2"
       height="180px"
+      onPress={() => navigation.navigate("Category", { name })}
     >
       <Text fontSize="3xl">{name}</Text>
       <Image

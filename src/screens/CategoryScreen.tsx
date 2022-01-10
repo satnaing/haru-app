@@ -1,6 +1,5 @@
 import React from "react";
-import { Box, Button, FlatList } from "native-base";
-import { StyleSheet } from "react-native";
+import { Box, FlatList } from "native-base";
 import CategoryFilter from "../components/CategoryFilter";
 import { newItems } from "../data/items";
 import ItemCard from "../components/ItemCard";
@@ -36,14 +35,5 @@ const Items = () => {
     />
   );
 };
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     backgroundColor: "#fff",
-//     alignItems: "center",
-//     justifyContent: "center",
-//   },
-// });
 
 export default CategoryScreen;
