@@ -1,5 +1,5 @@
 // import React from "react";
-import { Box, Heading, Image, ScrollView, Text } from "native-base";
+import { Box, Button, Heading, Image, ScrollView, Text } from "native-base";
 import { Dimensions, StyleSheet } from "react-native";
 import { useRoute } from "@react-navigation/native";
 import { items, newItems } from "../data/items";
@@ -7,14 +7,31 @@ import { SwiperFlatList } from "react-native-swiper-flatlist";
 import SizeButtons from "../components/SizeButtons";
 import QtyButton from "../components/QtyButton";
 import CartWishlistRow from "../components/CartWishlistRow";
+import { useState } from "react";
 
 const allItems = [...items, ...newItems];
-
-const images = [allItems[0].image1, allItems[0].image2];
 
 export default function ItemScreen() {
   const route = useRoute();
   const { id }: any = route.params;
+  const currentItem = allItems.filter((item) => item.id === id)[0];
+  const images = [currentItem.image1, currentItem.image2];
+
+  const [totalPrice, setTotalPrice] = useState(+currentItem.price);
+  let [qty, setQty] = useState(1);
+
+  const handleQtyAdd = () => {
+    setQty(qty + 1);
+    setTotalPrice(totalPrice + +currentItem.price);
+  };
+
+  const handleQtyRemove = () => {
+    if (+totalPrice.toFixed(2) !== +currentItem.price) {
+      setTotalPrice(totalPrice - +currentItem.price);
+      setQty(qty - 1);
+    }
+  };
+
   return (
     <Box style={{ flex: 1 }}>
       <ScrollView>
@@ -23,11 +40,9 @@ export default function ItemScreen() {
             paginationDefaultColor="#888888"
             paginationActiveColor="#282828"
             paginationStyle={{
-              // left: 0,
               alignItems: "center",
             }}
             paginationStyleItem={{
-              // borderRadius: 0,
               width: 30,
               height: 10,
               backgroundColor: "yellow",
@@ -55,14 +70,11 @@ export default function ItemScreen() {
             <Box flexDirection="row" alignItems="baseline">
               <Text color="light.400">buy for </Text>
               <Text fontSize="xl" fontWeight="bold">
-                $ 50.75
+                $ {currentItem.price}
               </Text>
             </Box>
           </Box>
-          <Text>
-            Lorem ipsum dolor sit amet, consectetur hdjkldf jd adipiscing elit.
-            Sed volutpat, dui at laoreet cursus, nibh velit hendrerit libero,
-          </Text>
+          <Text>{currentItem.description}</Text>
           <Box
             flexDirection="row"
             justifyContent="space-between"
@@ -70,9 +82,13 @@ export default function ItemScreen() {
             mt="4"
             mb="2"
           >
-            <QtyButton />
+            <QtyButton
+              qty={qty}
+              handleQtyAdd={handleQtyAdd}
+              handleQtyRemove={handleQtyRemove}
+            />
             <Text fontSize="lg" fontWeight="bold">
-              Total Price: $ 50.75
+              Total Price: $ {totalPrice.toFixed(2)}
             </Text>
           </Box>
         </Box>
