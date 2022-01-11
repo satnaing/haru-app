@@ -13,6 +13,7 @@ import {
 } from "native-base";
 import { items, newItems } from "../data/items";
 import QtyButton from "../components/QtyButton";
+import AppButton from "../components/AppButton";
 
 const combinedItem = [...newItems, ...items];
 
@@ -113,16 +114,9 @@ const BottomStack = () => {
         <Text fontWeight="bold">Total</Text>
         <Text fontWeight="bold">$ 242.34</Text>
       </HStack>
-      <Button
-        background="light.500"
-        _pressed={{ bg: "light.400" }}
-        _text={{ color: "light.100", fontSize: "lg" }}
-        height="16"
-        width="100%"
-        borderColor="light.500"
-      >
+      <AppButton size="full" verticalMargin>
         Checkout
-      </Button>
+      </AppButton>
     </VStack>
   );
 };

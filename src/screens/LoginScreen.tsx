@@ -11,6 +11,7 @@ import {
 } from "native-base";
 import { TouchableOpacity } from "react-native";
 import { NavigationProp, ParamListBase } from "@react-navigation/native";
+import AppButton from "../components/AppButton";
 
 const LoginScreen = ({
   navigation,
@@ -52,18 +53,8 @@ const LoginScreen = ({
           <Text color="light.300">Forgot Password?</Text>
         </TouchableOpacity>
 
-        <Button
-          background="light.500"
-          _pressed={{ bg: "light.400" }}
-          _text={{ color: "light.100", fontSize: "md" }}
-          height="12"
-          width="60%"
-          borderColor="light.500"
-          alignSelf="center"
-          my={6}
-        >
-          Login
-        </Button>
+        <AppButton verticalMargin>Login</AppButton>
+
         <HStack alignSelf="center">
           <Text color="light.300">Not a member? </Text>
           <TouchableOpacity onPress={() => navigation.navigate("Register")}>

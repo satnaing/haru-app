@@ -10,6 +10,7 @@ import {
   VStack,
 } from "native-base";
 import { items, newItems } from "../data/items";
+import AppButton from "../components/AppButton";
 
 const combinedItem = [...newItems, ...items];
 
@@ -65,17 +66,7 @@ const WishlistItem: React.FC<WishlistProps> = ({ img, name, price }) => {
         </Text>
         <Text fontWeight="bold">$ {price}</Text>
       </VStack>
-      <Button
-        background="light.500"
-        _pressed={{ bg: "light.400" }}
-        _text={{ color: "light.100" }}
-        height="10"
-        width="30%"
-        borderColor="light.500"
-        alignSelf="center"
-      >
-        Add to Cart
-      </Button>
+      <AppButton size="sm">Add to Cart</AppButton>
     </HStack>
   );
 };

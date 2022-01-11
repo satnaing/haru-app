@@ -11,6 +11,7 @@ import {
 } from "native-base";
 import { TouchableOpacity } from "react-native";
 import { NavigationProp, ParamListBase } from "@react-navigation/native";
+import AppButton from "../components/AppButton";
 
 const RegisterScreen = ({
   navigation,
@@ -46,18 +47,8 @@ const RegisterScreen = ({
           placeholder="Enter your password"
         />
 
-        <Button
-          background="light.500"
-          _pressed={{ bg: "light.400" }}
-          _text={{ color: "light.100", fontSize: "md" }}
-          height="12"
-          width="60%"
-          borderColor="light.500"
-          alignSelf="center"
-          my={6}
-        >
-          Register
-        </Button>
+        <AppButton verticalMargin>Register</AppButton>
+
         <HStack alignSelf="center">
           <Text color="light.300">Already a member? </Text>
           <TouchableOpacity onPress={() => navigation.navigate("Login")}>
