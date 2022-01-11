@@ -35,19 +35,19 @@ type SizeProps = {
   size?: number;
 };
 
-const SizeButton: React.FC<SizeProps> = ({ children, type, size = "md" }) => {
+const SizeButton: React.FC<SizeProps> = ({ children, type, size }) => {
   const borderLeftWidth = type === "add" ? 1 : 0;
   const borderRightWidth = type === "add" ? 0 : 1;
-  const btnSize = size == "md" ? 12 : 8;
+  const fontSize = size === 12 ? "lg" : "xs";
   return (
     <Button
       background="light.100"
       _pressed={{
         bg: "light.200",
       }}
-      _text={{ color: "light.300" }}
-      width={btnSize}
-      height={btnSize}
+      _text={{ color: "light.300", fontSize }}
+      width={size}
+      height={size}
       borderWidth="1"
       borderColor="light.300"
       style={{ borderLeftWidth, borderRightWidth }}
