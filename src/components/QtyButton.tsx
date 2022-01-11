@@ -1,16 +1,25 @@
 import React from "react";
 import { Box, Button, Center, Spacer } from "native-base";
+import { GestureResponderEvent, GestureResponderHandlers } from "react-native";
 
 type Props = {
   size?: "sm" | "md";
+  qty?: number;
+  handleQtyAdd?: () => void;
+  handleQtyRemove?: () => void;
 };
 
-const QtyButton: React.FC<Props> = ({ size = "md" }) => {
+const QtyButton: React.FC<Props> = ({
+  size = "md",
+  qty = 1,
+  handleQtyAdd,
+  handleQtyRemove,
+}) => {
   const btnSize = size == "md" ? 12 : 8;
   return (
     <Box flexDirection="row">
-      <SizeButton type="add" size={btnSize}>
-        -
+      <SizeButton type="sub" size={btnSize} onPress={handleQtyAdd}>
+        +
       </SizeButton>
       <Center
         background="light.100"
@@ -20,10 +29,10 @@ const QtyButton: React.FC<Props> = ({ size = "md" }) => {
         height={btnSize}
         _text={{ color: "light.300" }}
       >
-        1
+        {qty}
       </Center>
-      <SizeButton type="sub" size={btnSize}>
-        +
+      <SizeButton type="add" size={btnSize} onPress={handleQtyRemove}>
+        -
       </SizeButton>
     </Box>
   );
@@ -33,11 +42,12 @@ type SizeProps = {
   children: React.ReactNode;
   type: "add" | "sub";
   size?: number;
+  onPress?: ((event: GestureResponderEvent) => void) | null | undefined;
 };
 
-const SizeButton: React.FC<SizeProps> = ({ children, type, size }) => {
-  const borderLeftWidth = type === "add" ? 1 : 0;
-  const borderRightWidth = type === "add" ? 0 : 1;
+const SizeButton: React.FC<SizeProps> = ({ children, type, size, onPress }) => {
+  const borderLeftWidth = type === "add" ? 0 : 1;
+  const borderRightWidth = type === "add" ? 1 : 0;
   const fontSize = size === 12 ? "lg" : "xs";
   return (
     <Button
@@ -51,6 +61,7 @@ const SizeButton: React.FC<SizeProps> = ({ children, type, size }) => {
       borderWidth="1"
       borderColor="light.300"
       style={{ borderLeftWidth, borderRightWidth }}
+      onPress={onPress}
     >
       {children}
     </Button>
